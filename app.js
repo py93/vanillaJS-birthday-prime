@@ -1,13 +1,13 @@
-var btnTranslate = document.querySelector("#btn-translate");
-var txtInput = document.querySelector("#txt-input");
-var divShow = document.querySelector("#div-Show");
+const btnTranslate = document.querySelector("#btn-translate");
+const txtInput = document.querySelector("#txt-input");
+const divShow = document.querySelector("#div-Show");
 
 btnTranslate.addEventListener("click", clickEventHandler)
 
-var outputMessage = "";
-var number = "";
+let outputMessage = "";
+let number = "";
 function clickEventHandler(){
-    var inputText = txtInput.value;
+    let inputText = txtInput.value;
     if(validateDate(inputText)===true)
   {
     checkPrimeNumber(number);
@@ -31,8 +31,8 @@ function validateDate(userDOB)
 
 function validateDateFormat(userDOB)
 {
-  var userDD = userDOB.substring(0,2);
-  var userMM = userDOB.substring(3,5);
+  const userDD = userDOB.substring(0,2);
+  const userMM = userDOB.substring(3,5);
   number = parseInt((userDD + userMM));
   
   if (isNaN(userDD) || isNaN(userMM) || isNaN(number))
@@ -45,8 +45,8 @@ function validateDateFormat(userDOB)
 
 function validateDateRange(userDOB)
 {
-  var userDD = parseInt(userDOB.substring(0,2));
-  var userMM = parseInt(userDOB.substring(3,5));
+  const userDD = parseInt(userDOB.substring(0,2));
+  const userMM = parseInt(userDOB.substring(3,5));
 
   if((userDD>31) || (userMM>12))
   {
@@ -70,7 +70,7 @@ function checkPrimeNumber(number)
   if (number < 4) {
     return true;
   } else if (number > 3) {
-    for (var i = 2; i < number; i++) {
+    for (let i = 2; i < number; i++) {
       if (number % i === 0) {
         outputMessage = "\nYour DOB is NOT a PRIME NUMBER!!";
         return false;
